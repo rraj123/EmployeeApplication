@@ -41,5 +41,14 @@ public class EmployeeService {
         this.employeeList = tempEmployee;
     }
 
-
+    public void  deleteEmployee(int id) {
+        List<Employee> tempEmployee = new ArrayList<>();
+        for (Employee emp: employeeList) {
+            if (emp.getEmployeeId() == id) {
+                continue;
+            }
+            tempEmployee.add(emp);
+        }
+        this.employeeList = tempEmployee;
+    }
 }
