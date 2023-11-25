@@ -1,0 +1,1 @@
+curl -X POST -d "@data1.json" -H 'Content-Type: application/json' http://localhost:8093/employees

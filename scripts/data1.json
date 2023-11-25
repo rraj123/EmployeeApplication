@@ -1,0 +1,37 @@
+{
+  "employeeName": "Dan",
+  "employeeCity": "Dublin",
+  "spouse": {
+    "name": "Andrea",
+    "mobileNo": "911",
+    "age": "29"
+  },
+  "addresses": [
+    {
+      "line1": "line1 address",
+      "line2": "line2 address",
+      "zipcode": "95654",
+      "city": "Dublin",
+      "state": "CA",
+      "country": "US"
+    },
+    {
+      "line1": "line11 address",
+      "line2": "line2 1address",
+      "zipcode": "951654",
+      "city": "Dublin2",
+      "state": "CA2",
+      "country": "USA"
+    }
+  ],
+  "projects": [
+    {
+      "name": "name1",
+      "clientName": "clientName1"
+    },
+    {
+      "name": "name2",
+      "clientName": "clientName2"
+    }
+  ]
+}

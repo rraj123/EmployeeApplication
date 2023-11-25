@@ -29,5 +29,8 @@ curl -X PUT http://localhost:8093/employees/2 \
      -H "Content-Type: application/json" \
      -d '{"employeeId": 2, "employeeName": "Dan Mood", "employeeCity": "San Juan"}'
 
-curl -X DELETE http://localhost:8093/employees/2 \
+curl -X DELETE http://localhost:8093/employees/3 \
+     -H "Content-Type: application/json"
+
+curl -X DELETE http://localhost:8093/employees/1 \
      -H "Content-Type: application/json"
