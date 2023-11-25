@@ -1,9 +1,22 @@
 package com.sarp.employee.EmployeeApplication.entity;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
+
+    @Id
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
     int employeeId;
     String employeeName;
     String employeeCity;
+
+    public Employee() {
+    }
 
     public Employee(int employeeId, String employeeName, String employeeCity) {
         this.employeeId = employeeId;

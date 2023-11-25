@@ -1,6 +1,8 @@
 package com.sarp.employee.EmployeeApplication.service;
 
 import com.sarp.employee.EmployeeApplication.entity.Employee;
+import com.sarp.employee.EmployeeApplication.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -16,7 +18,8 @@ public class EmployeeService {
             new Employee(2, "Mike","San Diego"),
             new Employee(3, "Kevin","Farmington")
     ));
-
+    @Autowired
+    EmployeeRepository employeeRepository;
     public List<Employee> getAllEmployees() {
         return employeeList;
     }
@@ -26,7 +29,8 @@ public class EmployeeService {
     }
 
     public void createEmployee(Employee employee) {
-        employeeList.add(employee);
+//        employeeList.add(employee);
+        employeeRepository.save(employee);
     }
     public void updateEmployee(Employee employee) {
         List<Employee> tempEmployee = new ArrayList<>();

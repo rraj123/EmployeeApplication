@@ -15,3 +15,12 @@ curl -X PUT http://localhost:8093/employees/5 \
 curl -X DELETE http://localhost:8093/employees/5 \
      -H "Content-Type: application/json" \
      -d '{"employeeId": 5, "employeeName": "Dan Mood", "employeeCity": "Dubflin"}'
+
+
+curl -X POST http://localhost:8093/employees \
+     -H "Content-Type: application/json" \
+     -d '{"employeeName": "Frank", "employeeCity": "San Ramon"}'
+
+  curl -X POST http://localhost:8093/employees \
+       -H "Content-Type: application/json" \
+       -d '{"employeeName": "Dan", "employeeCity": "Dublin"}'
