@@ -1,5 +1,6 @@
 package com.sarp.employee.EmployeeApplication.service;
 
+import com.sarp.employee.EmployeeApplication.entity.Address;
 import com.sarp.employee.EmployeeApplication.entity.Employee;
 import com.sarp.employee.EmployeeApplication.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,27 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
     public List<Employee> getAllEmployees() {
-        return employeeList;
+//        return employeeList;
+        return employeeRepository.findAll();
     }
 
     public Employee getAnEmployee(int id) {
-        return employeeList.stream().filter(e ->(e.getEmployeeId() == id )).findFirst().get();
+//        return employeeList.stream().filter(e ->(e.getEmployeeId() == id )).findFirst().get();
+        return employeeRepository.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
     public void createEmployee(Employee employee) {
 //        employeeList.add(employee);
+        ArrayList<Address> addressArrayList = new ArrayList<>();
+        for(Address address: addressArrayList) {
+            addressArrayList.add((new Address(address.getLine1(),
+                    address.getLine2(),
+                    address.getZipCode(),
+                    address.getCity(),
+                    address.getState(),
+                    address.getCountry(),
+                    employee)));
+        }
         employeeRepository.save(employee);
     }
     public void updateEmployee(Employee employee) {
